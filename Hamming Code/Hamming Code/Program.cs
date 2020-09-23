@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using HammingCode.Model;
+using HammingCode.Presenter;
+using HammingCode.View;
 
-namespace Hamming_Code
+namespace HammingCode
 {
 	public static class Program
 	{
