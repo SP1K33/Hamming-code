@@ -52,7 +52,6 @@
 			this.EncodeButton.TabIndex = 2;
 			this.EncodeButton.Text = "Кодировать";
 			this.EncodeButton.UseVisualStyleBackColor = true;
-			this.EncodeButton.Click += new System.EventHandler(this.OnEncodeButtonClicked);
 			// 
 			// EncodeResultLabel
 			// 
@@ -69,6 +68,7 @@
 			this.SourceTextBox.Name = "SourceTextBox";
 			this.SourceTextBox.Size = new System.Drawing.Size(489, 20);
 			this.SourceTextBox.TabIndex = 4;
+			this.SourceTextBox.TextChanged += new System.EventHandler(this.OnSourceTextBoxChanged);
 			// 
 			// ResultTextBox
 			// 
@@ -81,7 +81,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(514, 381);
+			this.ClientSize = new System.Drawing.Size(514, 120);
 			this.Controls.Add(this.ResultTextBox);
 			this.Controls.Add(this.SourceTextBox);
 			this.Controls.Add(this.EncodeResultLabel);

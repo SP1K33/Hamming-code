@@ -13,7 +13,16 @@ namespace HammingCode
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+
+			IFormView formView = new MainForm();
+			IConsoleView consoleView = new ConsoleView();
+
+			IHammingModel model = new HammingModel();
+
+			var formPresenter = new FormPresenter(formView, model);
+			var consolePresenter = new ConsolePresenter(consoleView, model);
+
+			Application.Run((MainForm)formView);
 		}
 	}
 }

@@ -10,21 +10,18 @@ namespace HammingCode.View
 			InitializeComponent();
 		}
 
-		public event Action<string> EncodeButtonClickEvent;
+		public event Action<string> SourceTextChangeEvent;
 
-		private void OnEncodeButtonClicked(object sender, EventArgs e)
+		public void SetSourceText(string source)
 		{
-			EncodeButtonClickEvent?.Invoke(SourceTextBox.Text);
+			SourceTextBox.Text = source;
+			SourceTextBox.SelectionStart = SourceTextBox.Text.Length;
+			SourceTextBox.SelectionLength = 0;
 		}
 
-		public void ShowEncodeResult(string result)
+		private void OnSourceTextBoxChanged(object sender, EventArgs e)
 		{
-			ResultTextBox.Text = result;
-		}
-
-		public void ShowError(string error)
-		{
-			MessageBox.Show(error, "", MessageBoxButtons.OK);
+			SourceTextChangeEvent?.Invoke(SourceTextBox.Text);
 		}
 	}
 }
