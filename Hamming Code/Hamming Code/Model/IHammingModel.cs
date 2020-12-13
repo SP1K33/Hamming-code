@@ -10,7 +10,5 @@ namespace HammingCode.Model
 		void InsertControlBits(byte[] controlBits, int[] controlBitsIndexes, ref byte[] temporaryBitArray);
 		(byte[], List<int[]>) CalculateControlBits(byte[] temporaryBitArray, int controlBitsCount, int[] controlBitsIndexes);
 		void MakeMistake(ref byte[] temporaryBitArray, int mistakeIndex);
-		byte[] CalculateCheckSum(byte[] temporaryBitArray);
-
 	}
 }

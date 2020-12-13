@@ -73,11 +73,6 @@ namespace HammingCode.Model
 			temporaryBitArray[mistakeIndex] = bit;
 		}
 
-		public byte[] CalculateCheckSum(byte[] temporaryBitArray)
-		{
-			throw new NotImplementedException();
-		}
-
 		public void InsertControlBits(byte[] controlBits, int[] controlBitsIndexes, ref byte[] temporaryBitArray)
 		{
 			for (int i = 0, j = 0; i < temporaryBitArray.Length; i++)

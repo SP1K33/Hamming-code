@@ -98,7 +98,7 @@ namespace HammingCode.View
 
 		public void ShowArrayWithMistake(byte[] temporaryArray, int mistakeIndex)
 		{
-			Console.Write("Код с допущенной ошибкой: ", Color.ForestGreen);
+			Console.Write("Последовательность с допущенной ошибкой: ", Color.ForestGreen);
 			for (int i = 0; i < temporaryArray.Length; i++)
 			{
 				Console.Write(temporaryArray[i],
@@ -123,6 +123,24 @@ namespace HammingCode.View
 					i == mistakeIndex ? Color.ForestGreen : _defaultOutColor);
 			}
 			Console.WriteLine();
+		}
+
+		public void ShowCheckSumCalculation(byte[] controlBitsResults, List<int[]> controlBitsIndexes, byte[] temporaryBitArray)
+		{
+			for (int i = 0; i < controlBitsResults.Length; i++)
+			{
+				var bitResult = controlBitsResults[i];
+				var bitIndexes = controlBitsIndexes[i];
+
+				Console.Write($"s{i+1} = ");
+
+				for (int j = 0; j < bitIndexes.Length; j++)
+				{
+					Console.Write($"a{bitIndexes[j]}" + $" ({temporaryBitArray[bitIndexes[j] - 1]})" + ((j != bitIndexes.Length - 1) ? " + " : $" = {bitResult}"));
+				}
+
+				Console.WriteLine();
+			}
 		}
 
 		public void ShowEncodedArray(byte[] temporaryArray, int[] controlBitsIndexes)
