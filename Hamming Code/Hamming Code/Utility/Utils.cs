@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HammingCode.Utility
+﻿namespace HammingCode.Utility
 {
 	public static class Utils
 	{

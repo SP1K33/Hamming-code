@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="Model\HammingModel.cs" />
     <Compile Include="Model\IHammingModel.cs" />
-    <Compile Include="Presenter\ConsolePresenter.cs" />
+    <Compile Include="Presenter\Presenter.cs" />
     <Compile Include="View\ConsoleView.cs" />
     <Compile Include="View\IConsoleView.cs" />
     <Compile Include="Program.cs" />

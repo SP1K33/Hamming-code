@@ -1,6 +1,7 @@
 ﻿using HammingCode.Model;
 using HammingCode.Presenter;
 using HammingCode.View;
+using System;
 
 namespace HammingCode
 {
@@ -10,8 +11,9 @@ namespace HammingCode
 		{
 			IConsoleView consoleView = new ConsoleView();
 			IHammingModel model = new HammingModel();
-			var presenter = new ConsolePresenter(consoleView, model);
+			var presenter = new Presenter.Presenter(consoleView, model);
 			presenter.Start();
+			Console.Read();
 		}
 	}
 }
