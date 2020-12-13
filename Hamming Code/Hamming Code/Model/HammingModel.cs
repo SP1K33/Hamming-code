@@ -53,7 +53,7 @@ namespace HammingCode.Model
 				var controlIndexes = CalculateControlIndexes(temporaryBitArray, controlBitsIndexes[i]);
 				controlIndexesList.Add(controlIndexes);
 
-				for (var index = 1; index < controlIndexes.Length; ++index)
+				for (var index = 0; index < controlIndexes.Length; ++index)
 				{
 					var idx = controlIndexes[index];
 					if (idx <= temporaryBitArray.Length)

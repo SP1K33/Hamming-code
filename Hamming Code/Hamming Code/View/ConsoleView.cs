@@ -107,6 +107,24 @@ namespace HammingCode.View
 			Console.WriteLine();
 		}
 
+		public void ShowMistakeNumber(int mistakeNumber)
+		{
+			Console.Write("Порядковый номер бита с ошибкой: ", Color.ForestGreen);
+			Console.WriteLine(mistakeNumber, Color.MediumVioletRed);
+		}
+
+		public void ShowMistakeFix(byte[] temporaryArray, int mistakeIndex)
+		{
+			Console.WriteLine("Исправление ошибки...", Color.ForestGreen);
+			Console.Write("Зашифрованная последовательность с исправленной ошибкой: ", Color.ForestGreen);
+			for (int i = 0; i < temporaryArray.Length; i++)
+			{
+				Console.Write(temporaryArray[i],
+					i == mistakeIndex ? Color.ForestGreen : _defaultOutColor);
+			}
+			Console.WriteLine();
+		}
+
 		public void ShowEncodedArray(byte[] temporaryArray, int[] controlBitsIndexes)
 		{
 			Console.Write("Зашифрованная последовательность: ", Color.ForestGreen);

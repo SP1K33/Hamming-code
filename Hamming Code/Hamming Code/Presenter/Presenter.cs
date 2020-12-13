@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 using HammingCode.Model;
 using HammingCode.Utility;
@@ -50,13 +51,17 @@ namespace HammingCode.Presenter
 			_view.ShowControlBitsCalculation(controlBits.Item1, controlBits.Item2, temporaryBitArray);
 			_view.ShowEncodedArray(temporaryBitArray, controlBitsIndexes);
 
-			
+
 			var mistakeIndex = ProcessMistakeInput(temporaryBitArray.Length);
 			_model.MakeMistake(ref temporaryBitArray, mistakeIndex);
 			_view.ShowArrayWithMistake(temporaryBitArray, mistakeIndex);
 
 			controlBits = _model.CalculateControlBits(temporaryBitArray, controlBitsCount, controlBitsIndexes);
-
+			_view.ShowControlBitsCalculation(controlBits.Item1, controlBits.Item2, temporaryBitArray);
+			var mistakeNumber = Utils.BitArrayToInt(controlBits.Item1.Reverse().ToArray());
+			_view.ShowMistakeNumber(mistakeNumber);
+			_model.MakeMistake(ref temporaryBitArray, mistakeNumber - 1);
+			_view.ShowMistakeFix(temporaryBitArray, mistakeIndex);
 		}
 
 		private byte[] ProcessInput()

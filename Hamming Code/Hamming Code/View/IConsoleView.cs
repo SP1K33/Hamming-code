@@ -17,5 +17,7 @@ namespace HammingCode.View
 		void ShowControlBitsCalculation(byte[] controlBitsResults, List<int[]> controlBitsIndexes, byte[] temporaryBitArray);
 		void ShowMistakeInputError();
 		void ShowArrayWithMistake(byte[] temporaryArray, int mistakeIndex);
+		void ShowMistakeNumber(int mistakeNumber);
+		void ShowMistakeFix(byte[] temporaryArray, int mistakeIndex);
 	}
 }
